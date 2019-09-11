@@ -6,6 +6,8 @@ A button to easily open notejot.
 
 You have to manually install Notejot from Software Center, either from the distribution repo or from flathub.
 
+The extension **has not** been tested with a manual build of notejot repo: https://github.com/lainsce/notejot
+
 You can then automatically install the extension or you can download the files and being nerdish! :D
 
 
