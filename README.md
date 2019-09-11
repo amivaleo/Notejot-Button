@@ -4,7 +4,9 @@ A button to easily open notejot.
 
 ## Installation
 
-You can automaticall install the extension or you can download the files and being nerdish! :D
+You have to manually install Notejot from Software Center, either from the distribution repo or from flathub.
+
+You can then automatically install the extension or you can download the files and being nerdish! :D
 
 
 **Automatic installation (best option):**
