@@ -1,0 +1,10 @@
+{ 
+  "description": "A button to easily open notejot", 
+  "name": "Notejot Button", 
+  "shell-version": [
+    "3.30",
+    "3.32"
+  ],  
+  "uuid": "notejot-button@amivaleo", 
+  "version": 1
+}
