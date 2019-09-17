@@ -1,10 +1,11 @@
 { 
-  "description": "A button to easily open notejot", 
+  "description": "A button to easily open a new notejot note.", 
   "name": "Notejot Button", 
   "shell-version": [
     "3.30",
     "3.32"
   ],  
-  "uuid": "notejot-button@amivaleo", 
-  "version": 1
+  "url": "https://github.com/amivaleo/Calculator-Button", 
+  "uuid": "notejot-button@amivaleo",
+  "version": 2
 }

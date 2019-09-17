@@ -1,13 +1,18 @@
+// St : for creating UI elements
 const St = imports.gi.St;
+// Main : have all the UI elements
 const Main = imports.ui.main;
 const Util = imports.misc.util;
 const Shell = imports.gi.Shell;
 
-let button;
+
+let notejotButton;
 
 function init(extensionMeta) {
+}
 
-	button = new St.Bin({
+function enable() {
+	notejotButton = new St.Bin({
 		style_class: 'panel-button',
 		reactive: true,
 		can_focus: true,
@@ -19,20 +24,21 @@ function init(extensionMeta) {
 		icon_name: 'document-edit-symbolic',
 		style_class: 'system-status-icon'});
 		
-	button.set_child(icon);
-	button.connect('button-press-event', _toggleNotejot);
-}
+	notejotButton.set_child(icon);
+	notejotButton.connect('button-press-event', toggleNotejot);
 
-function enable() {
-	let children = Main.panel._rightBox.get_children();
-	Main.panel._rightBox.insert_child_at_index(button, children.length-1);
+	Main.panel._rightBox.insert_child_at_index(notejotButton, 0);
 }
 
 function disable() {
-	Main.panel._rightBox.remove_child(button);
+	Main.panel._rightBox.remove_child(notejotButton);
 }
 
-function _toggleNotejot() {
-	Util.trySpawnCommandLine('/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=com.github.lainsce.notejot com.github.lainsce.notejot');
-	Util.trySpawnCommandLine('com.github.lainsce.notejot');
+function toggleNotejot() {
+	try {
+		Util.trySpawnCommandLine('/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=com.github.lainsce.notejot com.github.lainsce.notejot --new-note');
+		Util.trySpawnCommandLine('com.github.lainsce.notejot --new-note');
+	} catch(err) {
+			Main.notify("Can't load Notejot. Is it installed?");
+	}
 }
