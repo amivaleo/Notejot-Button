@@ -1,11 +1,10 @@
-{ 
-  "description": "A button to easily open a new notejot note.", 
+{
+  "description": "Add a launcher on the top-bar that pops up a new notejot note when clicked.", 
   "name": "Notejot Button", 
   "shell-version": [
-    "3.30",
-    "3.32"
-  ],  
-  "url": "https://github.com/amivaleo/Calculator-Button", 
-  "uuid": "notejot-button@amivaleo",
-  "version": 2
+    "3.38"
+  ], 
+  "url": "https://github.com/amivaleo/Notejot-Button", 
+  "uuid": "notejot-button@amivaleo", 
+  "version": 3
 }

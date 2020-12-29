@@ -5,19 +5,15 @@ const Main = imports.ui.main;
 const Util = imports.misc.util;
 const Shell = imports.gi.Shell;
 
-
 let notejotButton;
 
-function init(extensionMeta) {
-}
+function init(extensionMeta) {}
 
 function enable() {
 	notejotButton = new St.Bin({
 		style_class: 'panel-button',
 		reactive: true,
 		can_focus: true,
-		x_fill: true,
-		y_fill: false,
 		track_hover: true});
 						 
 	let icon = new St.Icon({
@@ -37,8 +33,11 @@ function disable() {
 function toggleNotejot() {
 	try {
 		Util.trySpawnCommandLine('/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=com.github.lainsce.notejot com.github.lainsce.notejot --new-note');
-		Util.trySpawnCommandLine('com.github.lainsce.notejot --new-note');
 	} catch(err) {
+		try {
+			Util.trySpawnCommandLine('com.github.lainsce.notejot --new-note');
+		} catch(err) {
 			Main.notify("Can't load Notejot. Is it installed?");
+		}
 	}
 }
